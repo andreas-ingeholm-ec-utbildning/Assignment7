@@ -1,4 +1,4 @@
-﻿html {
+﻿html, body {
   font-family: "Inter";
 }
 
@@ -61,13 +61,18 @@ footer .wavy-lines {
   color: black;
   border: 1px solid transparent;
   text-align: center;
-  z-index: 1;
+  white-space: nowrap;
 }
 .button-theme i {
   font-style: normal;
 }
 .button-theme.secondary {
   background: transparent;
+  border: 1px solid black;
+}
+.button-theme.black {
+  color: white;
+  background: black;
   border: 1px solid black;
 }
 .button-theme:hover {
@@ -117,10 +122,37 @@ footer .wavy-lines {
   width: 100%;
 }
 .partners h3 {
-  /*font-family: "DM Sans";*/
   font-size: 22px;
   font-weight: bold;
 }
 .partners p {
   color: rgba(25, 25, 25, 0.7);
+}
+
+.about-company .image {
+  width: 533px;
+  height: 615px;
+  background: url(/image/stock/daria-pimkina-tYaccl19A3Q-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.about-company .image-overlay {
+  filter: drop-shadow(0px 18px 20px rgba(44, 44, 44, 0.15));
+  background: #beebff;
+  z-index: 1;
+  position: relative;
+  top: 65%;
+  left: -10%;
+  width: 75%;
+}
+.about-company p {
+  color: rgba(25, 25, 25, 0.7);
+}
+.about-company h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.fa-circle-play {
+  font-size: 32px;
 }
