@@ -156,3 +156,44 @@ footer .wavy-lines {
 .fa-circle-play {
   font-size: 32px;
 }
+
+.our-services {
+  background: #F0EFE9;
+}
+.our-services h1 {
+  width: 504px;
+}
+.our-services .card {
+  border-radius: 0;
+  border: 0;
+}
+.our-services .card.highlight {
+  background: #f9d783;
+}
+.our-services .card.highlight .button {
+  background: white;
+  color: black;
+}
+.our-services .button {
+  background: black;
+  color: white;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  display: flex;
+  text-decoration: none;
+  border-radius: 100%;
+  align-self: end;
+}
+.our-services .button * {
+  margin: auto;
+}
+.our-services .line {
+  height: 2px;
+  background: black;
+  width: 40px;
+}
+
+footer {
+  margin-top: 1000px;
+}

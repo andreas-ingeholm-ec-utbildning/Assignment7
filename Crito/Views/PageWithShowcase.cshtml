@@ -6,7 +6,14 @@
 	ViewData["Title"] = @Model.Value("title");
 }
 
-@await Html.PartialAsync("_Showcase")
-@await Html.PartialAsync("_Sponsors")
-@await Html.PartialAsync("_Features")
-@await Html.PartialAsync("_AboutCompany")
+@await Html.PartialAsync("home/_Showcase")
+@await Html.PartialAsync("home/_Sponsors")
+@await Html.PartialAsync("home/_Features")
+@await Html.PartialAsync("home/_AboutCompany")
+@await Html.PartialAsync("home/_OurServices")
+@await Html.PartialAsync("home/_WhyChooseUs")
+@await Html.PartialAsync("home/_ProjectAndCaseStudies")
+@await Html.PartialAsync("home/_MeetOurTeam")
+@await Html.PartialAsync("home/_Testimonial")
+@await Html.PartialAsync("home/_ArticlesAndNews")
+@await Html.PartialAsync("_MailingListPrompt")
