@@ -229,7 +229,6 @@ footer {
         * {
             margin: auto;
         }
-
     }
 
     .line {
@@ -238,6 +237,11 @@ footer {
         width: 40px;
     }
 
+    .wavy-lines {
+        position: relative;
+        margin-top: -220px;
+        pointer-events: none;
+    }
 }
 
 footer {

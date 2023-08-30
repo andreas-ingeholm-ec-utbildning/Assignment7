@@ -193,6 +193,11 @@ footer .wavy-lines {
   background: black;
   width: 40px;
 }
+.our-services .wavy-lines {
+  position: relative;
+  margin-top: -220px;
+  pointer-events: none;
+}
 
 footer {
   margin-top: 1000px;
