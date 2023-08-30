@@ -47,6 +47,10 @@ footer a {
 footer .logo-text {
   width: 309px;
 }
+footer .wavy-lines {
+  position: relative;
+  margin-top: -82px;
+}
 
 .button-theme {
   background: #f9d783;
