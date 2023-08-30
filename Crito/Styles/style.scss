@@ -66,18 +66,14 @@ footer {
 
 .button-theme {
     background: #f9d783;
-    width: auto;
     border-radius: 40px;
-    width: 122px;
-    height: 48px;
     border: none;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 26px;
-    padding-right: 26px;
+    padding: 12px 26px;
     text-decoration: none;
     color: black;
     border: 1px solid transparent;
+    text-align: center;
+    z-index: 1;
 
     i {
         font-style: normal;
@@ -97,4 +93,63 @@ footer {
         background: #e0c175;
     }
 
+}
+
+.showcase {
+    background: #f0efe9;
+
+    h1 {
+        font-family: "DM Sans";
+        font-size: 96px;
+        font-weight: bold;
+        line-height: 100px;
+        color: #191919;
+        width: 831px;
+        height: 308px;
+    }
+
+    p {
+        font-size: 20px;
+        width: 698px;
+        color: rgba(25,25,25,0.7);
+    }
+
+    .wavy-lines {
+        position: relative;
+        margin-top: -102px;
+        pointer-events: none;
+    }
+
+}
+
+.partners {
+
+    .col.left {
+        width: 460px;
+
+        h1 {
+            width: 460px;
+            font-size: 45px;
+            font-weight: bold;
+        }
+    }
+
+    .button {
+        width: 460px !important;
+        display: flex;
+
+        a {
+            width: 100%;
+        }
+    }
+
+    h3 {
+        /*font-family: "DM Sans";*/
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    p {
+        color: rgba(25,25,25,0.7);
+    }
 }
