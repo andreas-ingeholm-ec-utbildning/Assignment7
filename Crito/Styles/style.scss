@@ -82,6 +82,11 @@ footer {
     &.secondary {
         background: transparent;
         border: 1px solid black;
+
+        &.no-border {
+            border: none;
+        }
+
     }
 
     &.black {
@@ -98,6 +103,7 @@ footer {
     &:active {
         background: #e0c175;
     }
+
 }
 
 .showcase {
@@ -187,7 +193,6 @@ footer {
         font-size: 45px;
         font-weight: bold;
     }
-
 }
 
 .fa-circle-play {
@@ -245,6 +250,8 @@ footer {
 }
 
 .why-choose-us {
+    overflow: hidden;
+    height: 630px;
 
     h1 {
         width: 447px;
@@ -266,6 +273,7 @@ footer {
         position: relative;
         top: -603px;
         display: flex;
+        overflow: hidden;
 
         .background {
             background: #f0efe9;
@@ -285,6 +293,40 @@ footer {
             margin: 0 auto;
             background-size: contain;
             background-repeat: round;
+        }
+    }
+}
+
+.project-and-case-studies {
+
+    h5 {
+        font-weight: bold;
+    }
+
+    .line {
+        height: 2px;
+        background: #e8e8e8
+    }
+
+    .image {
+        height: 311px;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &.one {
+            background-image: url(/image/stock/adeolu-eletu-E7RLgUjjazc-unsplash.jpg);
+        }
+
+        &.two {
+            background-image: url(/image/stock/marek-levak-zANXcXyByos-unsplash.jpg);
+        }
+
+        &.three {
+            background-image: url(/image/stock/oli-dale-xjSkI_seiZY-unsplash.jpg);
+        }
+
+        &.four {
+            background-image: url(/image/stock/carlos-muza-hpjSkU2UYSU-unsplash.jpg);
         }
     }
 }

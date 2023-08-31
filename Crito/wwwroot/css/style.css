@@ -70,6 +70,9 @@ footer .wavy-lines {
   background: transparent;
   border: 1px solid black;
 }
+.button-theme.secondary.no-border {
+  border: none;
+}
 .button-theme.black {
   color: white;
   background: black;
@@ -199,6 +202,10 @@ footer .wavy-lines {
   pointer-events: none;
 }
 
+.why-choose-us {
+  overflow: hidden;
+  height: 630px;
+}
 .why-choose-us h1 {
   width: 447px;
 }
@@ -217,6 +224,7 @@ footer .wavy-lines {
   position: relative;
   top: -603px;
   display: flex;
+  overflow: hidden;
 }
 .why-choose-us .image-container .background {
   background: #f0efe9;
@@ -235,6 +243,31 @@ footer .wavy-lines {
   margin: 0 auto;
   background-size: contain;
   background-repeat: round;
+}
+
+.project-and-case-studies h5 {
+  font-weight: bold;
+}
+.project-and-case-studies .line {
+  height: 2px;
+  background: #e8e8e8;
+}
+.project-and-case-studies .image {
+  height: 311px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.project-and-case-studies .image.one {
+  background-image: url(/image/stock/adeolu-eletu-E7RLgUjjazc-unsplash.jpg);
+}
+.project-and-case-studies .image.two {
+  background-image: url(/image/stock/marek-levak-zANXcXyByos-unsplash.jpg);
+}
+.project-and-case-studies .image.three {
+  background-image: url(/image/stock/oli-dale-xjSkI_seiZY-unsplash.jpg);
+}
+.project-and-case-studies .image.four {
+  background-image: url(/image/stock/carlos-muza-hpjSkU2UYSU-unsplash.jpg);
 }
 
 footer {
