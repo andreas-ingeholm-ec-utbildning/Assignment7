@@ -341,6 +341,42 @@ footer .wavy-lines {
   background-image: url(/image/stock/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg);
 }
 
+.articles-and-news h4 {
+  font-family: "DM Sans";
+  margin: 0;
+}
+.articles-and-news p {
+  margin: 0;
+  color: #6a6c71;
+}
+.articles-and-news .col {
+  width: 56px;
+}
+.articles-and-news .image-overlay {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  background: #f9d783;
+  width: 56px;
+  height: 64px;
+}
+.articles-and-news .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 420px;
+  height: 230px;
+}
+.articles-and-news .image.one {
+  background-image: url(/image/stock/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg);
+}
+.articles-and-news .image.two {
+  background-image: url(/image/stock/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg);
+}
+.articles-and-news .image.three {
+  background-image: url(/image/stock/kobu-agency-ipARHaxETRk-unsplash.jpg);
+}
+
 stars {
   color: red;
 }
