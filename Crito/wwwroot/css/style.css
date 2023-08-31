@@ -110,29 +110,39 @@ footer .wavy-lines {
   pointer-events: none;
 }
 
-.partners .col.left {
+.features {
+  border: 2px solid rgba(25, 25, 25, 0.2);
+}
+.features.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.features .col.left {
   width: 460px;
 }
-.partners .col.left h1 {
+.features .col.left h1 {
   width: 460px;
   font-size: 45px;
   font-weight: bold;
 }
-.partners .button {
+.features .button {
   width: 460px !important;
   display: flex;
 }
-.partners .button a {
+.features .button a {
   width: 100%;
 }
-.partners h3 {
+.features h3 {
   font-size: 22px;
   font-weight: bold;
 }
-.partners p {
+.features p {
   color: rgba(25, 25, 25, 0.7);
 }
 
+.about-company .fa-circle-play {
+  color: black;
+}
 .about-company .image {
   width: 533px;
   height: 615px;
@@ -399,6 +409,19 @@ stars[c="5"]::after {
   content: "★★★★★";
 }
 
-footer {
-  margin-top: 500px;
+.mailing-list-prompt {
+  background: #f0efe9;
+}
+.mailing-list-prompt h1 {
+  font-family: "DM Sans";
+}
+.mailing-list-prompt input {
+  border-radius: 40px;
+  border: none;
+  padding: 20px 36px;
+  font-family: "Inter";
+}
+.mailing-list-prompt .wavy-lines {
+  position: relative;
+  margin-top: -64px;
 }

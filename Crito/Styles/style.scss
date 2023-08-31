@@ -133,7 +133,13 @@ footer {
 
 }
 
-.partners {
+.features {
+    border: 2px solid rgba(25,25,25,0.2 );
+
+    &.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
     .col.left {
         width: 460px;
@@ -162,10 +168,13 @@ footer {
     p {
         color: rgba(25,25,25,0.7);
     }
-
 }
 
 .about-company {
+
+    .fa-circle-play {
+        color: black;
+    }
 
     .image {
         width: 533px;
@@ -490,6 +499,22 @@ stars {
     }
 }
 
-footer {
-    margin-top: 500px;
+.mailing-list-prompt {
+    background: #f0efe9;
+
+    h1 {
+        font-family: "DM Sans";
+    }
+
+    input {
+        border-radius: 40px;
+        border: none;
+        padding: 20px 36px;
+        font-family: "Inter";
+    }
+
+    .wavy-lines {
+        position: relative;
+        margin-top: -64px;
+    }
 }
