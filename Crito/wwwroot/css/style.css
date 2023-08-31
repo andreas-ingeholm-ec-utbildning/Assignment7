@@ -1,4 +1,5 @@
-﻿html, body {
+﻿@charset "UTF-8";
+html, body {
   font-family: "Inter";
 }
 
@@ -270,6 +271,98 @@ footer .wavy-lines {
   background-image: url(/image/stock/carlos-muza-hpjSkU2UYSU-unsplash.jpg);
 }
 
+.meet-our-team {
+  background: rgba(240, 208, 130, 0.93);
+}
+.meet-our-team .col {
+  width: 307px;
+}
+.meet-our-team .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 420px;
+}
+.meet-our-team .image.one {
+  background-image: url(/image/stock/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg);
+}
+.meet-our-team .image.two {
+  background-image: url(/image/stock/itay-verchik-6ZKGBzrDd3I-unsplash.jpg);
+}
+.meet-our-team .image.three {
+  background-image: url(/image/stock/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg);
+}
+.meet-our-team .image.four {
+  background-image: url(/image/stock/the-connected-narrative-N8lRH2uxih4-unsplash.jpg);
+}
+
+.testimonial {
+  background: rgba(240, 208, 130, 0.93);
+}
+.testimonial .container {
+  background: white;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+.testimonial p {
+  margin: 0;
+  font-family: "DM Sans";
+}
+.testimonial .text-danger {
+  color: #f94d1c;
+  font-family: "Inter";
+}
+.testimonial .image {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+}
+.testimonial .image::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  bottom: -4px;
+  right: -4px;
+  border: 1px solid rgba(0, 0, 0, 0.1254901961);
+  border-radius: 100%;
+}
+.testimonial .image.one {
+  background-image: url(/image/stock/vince-veras-AJIqZDAUD7A-unsplash.jpg);
+}
+.testimonial .image.two {
+  background-image: url(/image/stock/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg);
+}
+.testimonial .image.three {
+  background-image: url(/image/stock/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg);
+}
+
+stars {
+  color: red;
+}
+stars[c="0"]::after {
+  content: "☆☆☆☆☆";
+}
+stars[c="1"]::after {
+  content: "★☆☆☆☆";
+}
+stars[c="2"]::after {
+  content: "★★☆☆☆☆";
+}
+stars[c="3"]::after {
+  content: "★★★☆☆";
+}
+stars[c="4"]::after {
+  content: "★★★★☆";
+}
+stars[c="5"]::after {
+  content: "★★★★★";
+}
+
 footer {
-  margin-top: 1000px;
+  margin-top: 500px;
 }
