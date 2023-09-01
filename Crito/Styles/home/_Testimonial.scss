@@ -1,0 +1,52 @@
+.testimonial {
+    background: rgba(240,208,130,0.93);
+
+    .container {
+        background: white;
+        border-radius: 2px;
+        border: 1px solid black;
+    }
+
+    p {
+        margin: 0;
+        font-family: 'DM Sans';
+    }
+
+    .text-danger {
+        color: #f94d1c;
+        font-family: 'Inter';
+    }
+
+    .image {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            bottom: -4px;
+            right: -4px;
+            border: 1px solid #00000020;
+            border-radius: 100%;
+        }
+
+        &.one {
+            background-image: url(/image/stock/vince-veras-AJIqZDAUD7A-unsplash.jpg);
+        }
+
+        &.two {
+            background-image: url(/image/stock/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg);
+        }
+
+        &.three {
+            background-image: url(/image/stock/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg);
+        }
+    }
+}

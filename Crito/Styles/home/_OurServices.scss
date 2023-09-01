@@ -1,0 +1,49 @@
+.our-services {
+    background: #F0EFE9;
+
+    h1 {
+        width: 504px;
+    }
+
+    .card {
+        border-radius: 0;
+        border: 0;
+
+        &.highlight {
+            background: #f9d783;
+
+            .button {
+                background: white;
+                color: black;
+            }
+        }
+    }
+
+    .button {
+        background: black;
+        color: white;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        display: flex;
+        text-decoration: none;
+        border-radius: 100%;
+        align-self: end;
+
+        * {
+            margin: auto;
+        }
+    }
+
+    .line {
+        height: 2px;
+        background: black;
+        width: 40px;
+    }
+
+    .wavy-lines {
+        position: relative;
+        margin-top: -220px;
+        pointer-events: none;
+    }
+}

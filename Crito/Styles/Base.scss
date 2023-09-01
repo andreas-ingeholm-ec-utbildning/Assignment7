@@ -1,0 +1,149 @@
+﻿html, body {
+    font-family: "Inter";
+}
+
+header {
+    background: #f0efe9;
+    color: black;
+
+    a {
+        color: black;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .line {
+        background: rgba(25,25,25,0.1 );
+
+        &.vertical {
+            height: 22px;
+        }
+    }
+}
+
+footer {
+    background: #0e1021;
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .logo-text {
+        width: 309px;
+    }
+
+    .wavy-lines {
+        position: relative;
+        margin-top: -82px;
+    }
+}
+
+.logo {
+    height: 54px;
+    width: 168px;
+}
+
+.line {
+    background: RGBA(255,255,255,0.2);
+
+    &.horizontal {
+        height: 1px;
+        width: 100%;
+    }
+
+    &.vertical {
+        height: 100%;
+        width: 1px;
+    }
+}
+
+.button-theme {
+    background: #f9d783;
+    border-radius: 40px;
+    border: none;
+    padding: 12px 26px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+
+    i {
+        font-style: normal;
+    }
+
+    &.secondary {
+        background: transparent;
+        border: 1px solid black;
+
+        &.no-border {
+            border: none;
+        }
+    }
+
+    &.black {
+        color: white;
+        background: black;
+        border: 1px solid black;
+    }
+
+    &:hover {
+        background: #f9d783;
+        border: 1px solid black;
+    }
+
+    &:active {
+        background: #e0c175;
+    }
+}
+
+.fa-circle-play {
+    font-size: 32px;
+}
+
+stars {
+    color: red;
+
+    &[c="0"]::after {
+        content: "☆☆☆☆☆";
+    }
+
+    &[c="1"]::after {
+        content: "★☆☆☆☆";
+    }
+
+    &[c="2"]::after {
+        content: "★★☆☆☆☆";
+    }
+
+    &[c="3"]::after {
+        content: "★★★☆☆";
+    }
+
+    &[c="4"]::after {
+        content: "★★★★☆";
+    }
+
+    &[c="5"]::after {
+        content: "★★★★★";
+    }
+}
+
+.breadcrumb {
+    background: #f0efe9;
+    position: relative;
+
+    .background-effect {
+        background-image: url(/image/background-effects/background-lines.svg);
+        background-repeat: no-repeat;
+        pointer-events: none;
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        bottom: 0;
+        right: 0;
+    }
+}

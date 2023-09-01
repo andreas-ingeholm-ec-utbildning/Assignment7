@@ -1,0 +1,36 @@
+.features {
+    border: 2px solid rgba(25,25,25,0.2 );
+
+    &.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .col.left {
+        width: 460px;
+
+        h1 {
+            width: 460px;
+            font-size: 45px;
+            font-weight: bold;
+        }
+    }
+
+    .button {
+        width: 460px !important;
+        display: flex;
+
+        a {
+            width: 100%;
+        }
+    }
+
+    h3 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    p {
+        color: rgba(25,25,25,0.7);
+    }
+}

@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<section class="breadcrumb d-flex flex-column py-5">
+
+    <div class="my-5 d-flex flex-column">
+
+        <div class="background-effect mt-5"></div>
+        <div class="d-flex flex-row mx-auto">
+            <a href="/" class="me-3 text-decoration-none text-reset">Home</a>
+            <a href="@Context.Request.Path" class="text-capitalize text-decoration-none text-reset">@Context.Request.Path.ToString().TrimStart('/')</a>
+        </div>
+
+        <h1 class="mx-auto my-2">@Model.Value("title")</h1>
+
+    </div>
+
+</section>

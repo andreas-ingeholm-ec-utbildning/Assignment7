@@ -6,6 +6,8 @@
 	ViewData["Title"] = @Model.Value("title");
 }
 
+<link href="/css/Home.min.css" rel="stylesheet" type="text/css" />
+
 @await Html.PartialAsync("home/_Showcase")
 @await Html.PartialAsync("home/_Sponsors")
 @await Html.PartialAsync("home/_Features")

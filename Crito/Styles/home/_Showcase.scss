@@ -1,0 +1,25 @@
+.showcase {
+    background: #f0efe9;
+
+    h1 {
+        font-family: "DM Sans";
+        font-size: 96px;
+        font-weight: bold;
+        line-height: 100px;
+        color: #191919;
+        width: 831px;
+        height: 308px;
+    }
+
+    p {
+        font-size: 20px;
+        width: 698px;
+        color: rgba(25,25,25,0.7);
+    }
+
+    .wavy-lines {
+        position: relative;
+        margin-top: -102px;
+        pointer-events: none;
+    }
+}
