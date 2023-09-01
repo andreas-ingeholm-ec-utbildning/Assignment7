@@ -4,6 +4,7 @@
 @import "Breadcrumb";
 @import "Button";
 @import "MailingListPrompt";
+@import "ArticleItem";
 
 @import "home/Showcase";
 @import "home/Sponsors";
@@ -14,8 +15,7 @@
 @import "home/ProjectsAndCaseStudies";
 @import "home/MeetOurTeam";
 @import "home/Testimonial";
-@import "home/ArticlesAndNews";
 
-@import "contact/contact-info";
-@import "contact/contact-form";
-@import "contact/map";
+@import "contact/Contact-Info";
+@import "contact/Contact-Form";
+@import "contact/Map";

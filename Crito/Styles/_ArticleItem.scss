@@ -1,0 +1,34 @@
+.article-item {
+    width: 420px;
+
+    h4 {
+        font-family: "DM Sans";
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        color: #6a6c71;
+    }
+
+    .col {
+        width: 56px;
+    }
+
+    .image-overlay {
+        position: relative;
+        left: 20px;
+        top: 20px;
+        background: #f9d783;
+        width: 56px;
+        height: 64px;
+    }
+
+    .image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 420px;
+        height: 230px;
+    }
+}
