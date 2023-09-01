@@ -1,12 +1,9 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageWithShowcase>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "_Layout.cshtml";
-	ViewData["Title"] = @Model.Value("title");
 }
-
-<link href="/css/Home.min.css" rel="stylesheet" type="text/css" />
 
 @await Html.PartialAsync("home/_Showcase")
 @await Html.PartialAsync("home/_Sponsors")

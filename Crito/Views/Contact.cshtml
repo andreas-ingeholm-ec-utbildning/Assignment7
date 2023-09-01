@@ -1,13 +1,9 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageWithBreadcrumb>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Contact>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "_Layout.cshtml"; 
-	ViewData["Title"] = @Model.Value("title");
+	Layout = "_Layout.cshtml";
 }
-
-<link href="/css/Home.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/Base.min.css" rel="stylesheet" type="text/css" />
 
 @await Html.PartialAsync("_Breadcrumb")
 @await Html.PartialAsync("contact/_ContactInfo")

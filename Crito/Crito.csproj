@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Styles\contact\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

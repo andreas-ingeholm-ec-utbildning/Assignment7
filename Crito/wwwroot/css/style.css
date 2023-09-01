@@ -1,4 +1,152 @@
-﻿.showcase {
+﻿@charset "UTF-8";
+html, body {
+  font-family: "Inter";
+}
+
+.logo {
+  height: 54px;
+  width: 168px;
+}
+
+.line {
+  background: RGBA(255, 255, 255, 0.2);
+}
+.line.horizontal {
+  height: 1px;
+  width: 100%;
+}
+.line.vertical {
+  height: 100%;
+  width: 1px;
+}
+
+.fa-circle-play {
+  font-size: 32px;
+}
+
+stars {
+  color: red;
+}
+stars[c="0"]::after {
+  content: "☆☆☆☆☆";
+}
+stars[c="1"]::after {
+  content: "★☆☆☆☆";
+}
+stars[c="2"]::after {
+  content: "★★☆☆☆☆";
+}
+stars[c="3"]::after {
+  content: "★★★☆☆";
+}
+stars[c="4"]::after {
+  content: "★★★★☆";
+}
+stars[c="5"]::after {
+  content: "★★★★★";
+}
+
+input[type=text] {
+  border-radius: 40px;
+  border: none;
+  padding: 20px 36px;
+  font-family: "Inter";
+}
+
+header {
+  background: #f0efe9;
+  color: black;
+}
+header a {
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+header .line {
+  background: rgba(25, 25, 25, 0.1);
+}
+header .line.vertical {
+  height: 22px;
+}
+
+footer {
+  background: #0e1021;
+  color: white;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+footer .logo-text {
+  width: 309px;
+}
+footer .wavy-lines {
+  position: relative;
+  margin-top: -82px;
+}
+
+.breadcrumb {
+  background: #f0efe9;
+  position: relative;
+}
+.breadcrumb .background-effect {
+  background-image: url(/image/background-effects/background-lines.svg);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  bottom: 0;
+  right: 0;
+}
+
+.button-theme {
+  background: #f9d783;
+  border-radius: 40px;
+  border: none;
+  padding: 12px 26px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid transparent;
+  text-align: center;
+  white-space: nowrap;
+}
+.button-theme i {
+  font-style: normal;
+}
+.button-theme.secondary {
+  background: transparent;
+  border: 1px solid black;
+}
+.button-theme.secondary.no-border {
+  border: none;
+}
+.button-theme.black {
+  color: white;
+  background: black;
+  border: 1px solid black;
+}
+.button-theme:hover {
+  background: #f9d783;
+  border: 1px solid black;
+}
+.button-theme:active {
+  background: #e0c175;
+}
+
+.mailing-list-prompt {
+  background: #f0efe9;
+}
+.mailing-list-prompt h1 {
+  font-family: "DM Sans";
+}
+.mailing-list-prompt .wavy-lines {
+  position: relative;
+  margin-top: -64px;
+}
+
+.showcase {
   background: #f0efe9;
 }
 .showcase h1 {
@@ -312,13 +460,32 @@
   background-image: url(/image/stock/oli-dale-xjSkI_seiZY-unsplash.jpg);
 }
 
-.mailing-list-prompt {
+.contact-info h4 {
+  font: "DM Sans";
+}
+.contact-info .card {
+  border-radius: 0;
+}
+.contact-info .icon {
+  background: black;
+  color: white;
+  border-radius: 100%;
+  width: 60px !important;
+  height: 60px !important;
+  padding-top: 19px;
+  padding-left: 23px;
+}
+
+.contact-form {
   background: #f0efe9;
 }
-.mailing-list-prompt h1 {
+.contact-form h1 {
   font-family: "DM Sans";
+  font-weight: bold;
+  width: 449px;
 }
-.mailing-list-prompt .wavy-lines {
-  position: relative;
-  margin-top: -64px;
+
+.map {
+  height: 620px;
+  margin-bottom: -8px;
 }

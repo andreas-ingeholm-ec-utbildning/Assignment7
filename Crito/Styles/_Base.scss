@@ -1,0 +1,61 @@
+﻿html, body {
+    font-family: "Inter";
+}
+
+.logo {
+    height: 54px;
+    width: 168px;
+}
+
+.line {
+    background: RGBA(255,255,255,0.2);
+
+    &.horizontal {
+        height: 1px;
+        width: 100%;
+    }
+
+    &.vertical {
+        height: 100%;
+        width: 1px;
+    }
+}
+
+.fa-circle-play {
+    font-size: 32px;
+}
+
+stars {
+    color: red;
+
+    &[c="0"]::after {
+        content: "☆☆☆☆☆";
+    }
+
+    &[c="1"]::after {
+        content: "★☆☆☆☆";
+    }
+
+    &[c="2"]::after {
+        content: "★★☆☆☆☆";
+    }
+
+    &[c="3"]::after {
+        content: "★★★☆☆";
+    }
+
+    &[c="4"]::after {
+        content: "★★★★☆";
+    }
+
+    &[c="5"]::after {
+        content: "★★★★★";
+    }
+}
+
+input[type=text] {
+    border-radius: 40px;
+    border: none;
+    padding: 20px 36px;
+    font-family: "Inter";
+}

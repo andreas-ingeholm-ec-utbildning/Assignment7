@@ -1,0 +1,15 @@
+.breadcrumb {
+    background: #f0efe9;
+    position: relative;
+
+    .background-effect {
+        background-image: url(/image/background-effects/background-lines.svg);
+        background-repeat: no-repeat;
+        pointer-events: none;
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        bottom: 0;
+        right: 0;
+    }
+}

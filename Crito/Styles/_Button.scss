@@ -1,0 +1,39 @@
+.button-theme {
+    background: #f9d783;
+    border-radius: 40px;
+    border: none;
+    padding: 12px 26px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+
+    i {
+        font-style: normal;
+    }
+
+    &.secondary {
+        background: transparent;
+        border: 1px solid black;
+
+        &.no-border {
+            border: none;
+        }
+    }
+
+    &.black {
+        color: white;
+        background: black;
+        border: 1px solid black;
+    }
+
+    &:hover {
+        background: #f9d783;
+        border: 1px solid black;
+    }
+
+    &:active {
+        background: #e0c175;
+    }
+}

@@ -1,10 +1,6 @@
 ﻿[
   {
-    "outputFile": "wwwroot/css/Home.css",
-    "inputFile": "Styles/Home.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/Base.css",
-    "inputFile": "Styles/Base.scss"
+    "outputFile": "wwwroot/css/style.css",
+    "inputFile": "Styles/style.scss"
   }
 ]
