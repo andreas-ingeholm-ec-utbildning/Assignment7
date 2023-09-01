@@ -318,12 +318,6 @@
 .mailing-list-prompt h1 {
   font-family: "DM Sans";
 }
-.mailing-list-prompt input {
-  border-radius: 40px;
-  border: none;
-  padding: 20px 36px;
-  font-family: "Inter";
-}
 .mailing-list-prompt .wavy-lines {
   position: relative;
   margin-top: -64px;

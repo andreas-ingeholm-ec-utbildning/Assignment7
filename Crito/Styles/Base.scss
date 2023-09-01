@@ -132,6 +132,14 @@ stars {
     }
 }
 
+
+input[type=text] {
+    border-radius: 40px;
+    border: none;
+    padding: 20px 36px;
+    font-family: "Inter";
+}
+
 .breadcrumb {
     background: #f0efe9;
     position: relative;
@@ -146,4 +154,41 @@ stars {
         bottom: 0;
         right: 0;
     }
+}
+
+.contact-info {
+
+    h4 {
+        font: "DM Sans";
+    }
+
+
+    .card {
+        border-radius: 0;
+    }
+
+    .icon {
+        background: black;
+        color: white;
+        border-radius: 100%;
+        width: 60px !important;
+        height: 60px !important;
+        padding-top: 19px;
+        padding-left: 23px;
+    }
+}
+
+.contact-form {
+    background: #f0efe9;
+
+    h1 {
+        font-family: "DM Sans";
+        font-weight: bold;
+        width: 449px;
+    }
+}
+
+.map {
+    height: 620px;
+    margin-bottom: -8px;
 }
