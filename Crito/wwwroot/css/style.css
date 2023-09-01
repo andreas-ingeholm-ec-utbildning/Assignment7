@@ -10,6 +10,7 @@ html, body {
 
 .line {
   background: RGBA(255, 255, 255, 0.2);
+  padding: 0;
 }
 .line.horizontal {
   height: 1px;
@@ -56,6 +57,13 @@ input[type=text] {
 header {
   background: #f0efe9;
   color: black;
+}
+header .col {
+  padding: 0;
+}
+header .row {
+  padding: 0;
+  margin: 0;
 }
 header a {
   color: black;
