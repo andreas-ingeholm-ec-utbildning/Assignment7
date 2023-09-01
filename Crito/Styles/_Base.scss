@@ -18,11 +18,31 @@ h1, h2, h3, h4, h5 {
     &.horizontal {
         height: 1px;
         width: 100%;
+
+        &.h-px2 {
+            height: 2px;
+        }
+
+        &.w-px48 {
+            width: 48px;
+        }
     }
 
     &.vertical {
         height: 100%;
         width: 1px;
+
+        &.w-px2 {
+            width: 2px;
+        }
+
+        &.h-px48 {
+            height: 48px;
+        }
+    }
+
+    &.black {
+        background: black;
     }
 }
 
@@ -63,4 +83,24 @@ input[type=text] {
     border: none;
     padding: 20px 36px;
     font-family: "Inter";
+
+    &.gray {
+        background: #f3f3f3;
+    }
+}
+
+.card {
+    border-radius: 0;
+
+}
+
+.underline {
+    border: 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #f3f3f3;
+}
+
+.bg-gray {
+    background: #f0efe9;
 }

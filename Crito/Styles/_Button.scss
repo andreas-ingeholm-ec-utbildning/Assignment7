@@ -25,7 +25,17 @@
     &.black {
         color: white;
         background: black;
+    }
+
+    &.white {
+        color: black;
+        background: white;
         border: 1px solid black;
+    }
+
+    &.gray {
+        color: black;
+        background: rgba(25,25,25,0.05 );
     }
 
     &:hover {

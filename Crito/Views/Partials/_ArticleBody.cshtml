@@ -1,0 +1,118 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var tags = new[] { "Digilization", "School", "IT", "Design", "Work", "Tech" };
+}
+
+<div class="article container my-5 py-5">
+
+    <div class="row mb-5">
+
+        <h1>How to use digilization in the classroom</h1>
+        <div class="d-flex flex-row">
+            <p>Mar 25, 2023</p>
+            <p class="text-warning mx-4">•</p>
+            <p>Business</p>
+            <p class="text-warning mx-4">•</p>
+            <p>Kimberly Hansen</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col me-5">
+
+            <div class="image mb-4" style="background-image: url(/image/stock/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg)"></div>
+
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</p>
+            <p class="text-muted">Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. uspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.</p>
+            <p class="mb-4 text-muted">Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+            <q>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</q>
+
+            <p class="mt-4 text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+
+            <div class="row w-auto mt-5 pt-3">
+                @foreach (var tag in tags)
+                {
+                    <div class="col">
+                        <a href="#" class="button-theme gray">@tag</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+        <div class="col ms-5">
+
+            <input class="gray w-100" type="text" placeholder="🔎 Type to search..." />
+            <div class="card p-5 my-4">
+
+                <h4>Recent posts</h4>
+                <div class="line horizontal black h-px2 w-px48 mb-4"></div>
+
+                <div class="underline mb-3">
+                    <h5>How to blow through capital at an incredible rate</h5>
+                    <p class="text-muted">Jan 14, 2020</p>
+                </div>
+
+                <div class="underline mb-3">
+                    <h5>Design Studios That Everyone Should Know About? </h5>
+                    <p class="text-muted">Jan 14, 2020</p>
+                </div>
+
+                <div class="underline mb-3">
+                    <h5>How did we get 1M+ visitors in 30 days without anything!</h5>
+                    <p class="text-muted">Jan 14, 2020</p>
+                </div>
+
+                <div>
+                    <h5>Figma On Figma: How We Built Our Website Design System</h5>
+                    <p class="text-muted">Jan 14, 2020</p>
+                </div>
+
+            </div>
+
+            <div class="card p-5">
+
+                <h4>Categories</h4>
+                <div class="line horizontal black h-px2 w-px48 mb-4"></div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Technology - </h5>
+                    <h5 class="text-muted fw-bold ms-2">20 posts</h5>
+                </div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Freelancing - </h5>
+                    <h5 class="text-muted fw-bold ms-2">07 posts</h5>
+                </div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Writing - </h5>
+                    <h5 class="text-muted fw-bold ms-2">16 posts</h5>
+                </div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Marketing - </h5>
+                    <h5 class="text-muted fw-bold ms-2">11 posts</h5>
+                </div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Business - </h5>
+                    <h5 class="text-muted fw-bold ms-2">35 posts</h5>
+                </div>
+
+                <div class="d-flex flex-row py-1">
+                    <h5 class="fw-bold">Education - </h5>
+                    <h5 class="text-muted fw-bold ms-2">14 posts</h5>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

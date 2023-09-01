@@ -1,1 +1,5 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@await Html.PartialAsync("_ArticleBody");
+
+<div class="bg-gray">
+    @await Html.PartialAsync("home/_ArticlesAndNews");
+</div>

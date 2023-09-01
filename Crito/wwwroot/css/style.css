@@ -20,9 +20,24 @@ h1, h2, h3, h4, h5 {
   height: 1px;
   width: 100%;
 }
+.line.horizontal.h-px2 {
+  height: 2px;
+}
+.line.horizontal.w-px48 {
+  width: 48px;
+}
 .line.vertical {
   height: 100%;
   width: 1px;
+}
+.line.vertical.w-px2 {
+  width: 2px;
+}
+.line.vertical.h-px48 {
+  height: 48px;
+}
+.line.black {
+  background: black;
 }
 
 .fa-circle-play {
@@ -56,6 +71,24 @@ input[type=text] {
   border: none;
   padding: 20px 36px;
   font-family: "Inter";
+}
+input[type=text].gray {
+  background: #f3f3f3;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.underline {
+  border: 0;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #f3f3f3;
+}
+
+.bg-gray {
+  background: #f0efe9;
 }
 
 header {
@@ -137,7 +170,15 @@ footer .wavy-lines {
 .button-theme.black {
   color: white;
   background: black;
+}
+.button-theme.white {
+  color: black;
+  background: white;
   border: 1px solid black;
+}
+.button-theme.gray {
+  color: black;
+  background: rgba(25, 25, 25, 0.05);
 }
 .button-theme:hover {
   background: #f9d783;
@@ -186,6 +227,13 @@ footer .wavy-lines {
   background-position: center;
   width: 420px;
   height: 230px;
+}
+
+.article .image {
+  width: 758px;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
 }
 
 .showcase {
