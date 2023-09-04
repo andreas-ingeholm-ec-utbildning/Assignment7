@@ -1,8 +1,23 @@
-﻿html, body {
+﻿html,
+body {
     font-family: "Inter";
 }
 
-h1, h2, h3, h4, h5 {
+.wrapper {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: "DM Sans";
 }
 
@@ -12,7 +27,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .line {
-    background: RGBA(255,255,255,0.2);
+    background: RGBA(255, 255, 255, 0.2);
     padding: 0;
 
     &.horizontal {

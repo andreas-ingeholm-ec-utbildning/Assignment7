@@ -1,9 +1,24 @@
-﻿@charset "UTF-8";
-html, body {
+@charset "UTF-8";
+html,
+body {
   font-family: "Inter";
 }
 
-h1, h2, h3, h4, h5 {
+.wrapper {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "DM Sans";
 }
 
@@ -238,6 +253,7 @@ footer .wavy-lines {
 
 .showcase {
   background: #f0efe9;
+  position: relative;
 }
 .showcase h1 {
   font-family: "DM Sans";
@@ -245,8 +261,7 @@ footer .wavy-lines {
   font-weight: bold;
   line-height: 100px;
   color: #191919;
-  width: 831px;
-  height: 308px;
+  max-width: 831px;
 }
 .showcase p {
   font-size: 20px;
@@ -254,8 +269,9 @@ footer .wavy-lines {
   color: rgba(25, 25, 25, 0.7);
 }
 .showcase .wavy-lines {
-  position: relative;
-  margin-top: -102px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   pointer-events: none;
 }
 
@@ -524,4 +540,4 @@ footer .wavy-lines {
 .map {
   height: 620px;
   margin-bottom: -8px;
-}
+}/*# sourceMappingURL=style.css.map */

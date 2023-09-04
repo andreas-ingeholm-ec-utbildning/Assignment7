@@ -1,18 +1,41 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.PublishedContent
 
-<section class="showcase">
+<section class="showcase pt-5">
 
     <div class="container">
-        <div class="col py-5">
-            <h1 class="h1 mt-5 mb-3">We provide The Best business solutions</h1>
-            <p>Establish your vision and value proposition and turn them into testable prototypes.</p>
-            <div class="pt-4 mb-5">
-                <a class="button-theme" href="#">Get consulting <i class="fa-solid fa-arrow-up-right"></i></a>
-                <a class="button-theme secondary ms-4" href="#">Learn more <i class="fa-solid fa-arrow-up-right"></i></a>
-            </div>
-        </div>
-        <div class="col">
+        <div class="row flex-nowrap">
+            <div class="col pt-5">
+                <h1 class="h1 mt-5">@Model.Value("ShowcaseTitle")</h1>
+                <p>@Model.Value("ShowcaseSubtitle")</p>
+                <div class="pt-4">
 
+                    @{
+                        var isFirst = true;
+                        var buttons = Model.Value("test") as IList<Link> ?? Enumerable.Empty<Link>();
+                        foreach (var button in buttons)
+                            if (isFirst)
+                            {
+                                isFirst = false;
+                                <a class="button-theme" href="@button.Url">@button.Name <i class="fa-solid fa-arrow-up-right"></i></a>
+                            }
+                            else
+                            {
+                                <a class="button-theme secondary" href="@button.Url">@button.Name <i class="fa-solid fa-arrow-up-right"></i></a>
+                            }
+                    }
+
+                </div>
+            </div>
+            <div class="col">
+
+                @{
+                    var showcase = Model.Value<IPublishedContent>("ShowcaseImage");
+                    <img src="@showcase?.MediaUrl()" alt="">
+                }
+
+            </div>
         </div>
     </div>
 
