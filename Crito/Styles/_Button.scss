@@ -8,6 +8,7 @@
     border: 1px solid transparent;
     text-align: center;
     white-space: nowrap;
+    height: 52px;
 
     i {
         font-style: normal;
@@ -35,7 +36,7 @@
 
     &.gray {
         color: black;
-        background: rgba(25,25,25,0.05 );
+        background: rgba(25, 25, 25, 0.05);
     }
 
     &:hover {

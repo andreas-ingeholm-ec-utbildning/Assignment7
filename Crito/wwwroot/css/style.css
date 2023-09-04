@@ -171,6 +171,7 @@ footer .wavy-lines {
   border: 1px solid transparent;
   text-align: center;
   white-space: nowrap;
+  height: 52px;
 }
 .button-theme i {
   font-style: normal;
