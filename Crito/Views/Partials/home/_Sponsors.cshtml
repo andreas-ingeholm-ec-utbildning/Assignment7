@@ -1,23 +1,26 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.PublishedContent
 
 <section class="container py-5">
 
     <div class="row">
-        <div class="col">
-            <img src="image/logo/paperz.svg" />
-        </div>
-        <div class="col">
-            <img src="image/logo/dorfus.svg" />
-        </div>
-        <div class="col">
-            <img src="image/logo/martino.svg" />
-        </div>
-        <div class="col">
-            <img src="image/logo/square.svg" />
-        </div>
-        <div class="col">
-            <img src="image/logo/gobona.svg" />
-        </div>
+
+        @{
+
+            var images = Model.Value<IList<MediaWithCrops>>("SponsorImages");
+
+            if (images is not null)
+                foreach (var image in images)
+                {
+                    var url = @image.MediaUrl();
+                    <div class="col">
+                        <img src="@url" />
+                    </div>
+                }
+
+        }
+
     </div>
 
 </section>

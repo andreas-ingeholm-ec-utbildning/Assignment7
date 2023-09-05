@@ -8,12 +8,12 @@
         <div class="row flex-nowrap">
             <div class="col pt-5">
                 <h1 class="h1 mt-5">@Model.Value("ShowcaseTitle")</h1>
-                <p>@Model.Value("ShowcaseSubtitle")</p>
+                <p>@Model.Value("ShowcaseDescription")</p>
                 <div class="pt-4">
 
                     @{
                         var isFirst = true;
-                        var buttons = Model.Value("test") as IList<Link> ?? Enumerable.Empty<Link>();
+                        var buttons = Model.Value("ShowcaseButtons") as IList<Link> ?? Enumerable.Empty<Link>();
                         foreach (var button in buttons)
                             if (isFirst)
                             {
