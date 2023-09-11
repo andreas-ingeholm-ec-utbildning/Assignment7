@@ -2,14 +2,20 @@
 @using Umbraco.Cms.Core.Models
 @using Umbraco.Cms.Core.Models.PublishedContent
 
+@{
+    var showcase = Model.Value<IPublishedContent>("ShowcaseImage");
+    var imageUrl = showcase?.MediaUrl();
+}
+
 <section class="showcase pt-5">
+<div style="background: url(image/background-effects/background-lines.svg) no-repeat left bottom">
 
     <div class="container">
         <div class="row flex-nowrap">
-            <div class="col pt-5">
+            <div class="col py-5 mb-5">
                 <h1 class="h1 mt-5">@Model.Value("ShowcaseTitle")</h1>
                 <p>@Model.Value("ShowcaseDescription")</p>
-                <div class="pt-4">
+                <div class="pt-4 pb-5 mb-5">
 
                     @{
                         var isFirst = true;
@@ -28,19 +34,15 @@
 
                 </div>
             </div>
-            <div class="col">
-
-                @{
-                    var showcase = Model.Value<IPublishedContent>("ShowcaseImage");
-                    <img src="@showcase?.MediaUrl()" alt="">
-                }
+            <div class="col" style="background: url(@imageUrl) no-repeat right bottom; background-size: contain;">
 
             </div>
         </div>
     </div>
 
-    <div class="d-flex">
-        <img class="wavy-lines" src="image/background-effects/background-lines.svg" alt="" />
-    </div>
+    @* <div class="d-flex mt-5 pt-5">
+    <img class="wavy-lines" src="" alt="" />
+    </div> *@
 
+</div>
 </section>
