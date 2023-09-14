@@ -122,6 +122,14 @@ header a {
   text-decoration: none;
   white-space: nowrap;
 }
+header a.current {
+  -webkit-text-decoration: underline black 1px;
+          text-decoration: underline black 1px;
+}
+header a:hover {
+  -webkit-text-decoration: underline gray 1px;
+          text-decoration: underline gray 1px;
+}
 header .line {
   background: rgba(25, 25, 25, 0.1);
 }

@@ -1,16 +1,4 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@using Umbraco.Cms.Core
-@using Umbraco.Cms.Core.Models.PublishedContent
-@using Umbraco.Cms.Core.Routing
-@using Umbraco.Extensions
-
-@inject IPublishedValueFallback PublishedValueFallback
-@inject IPublishedUrlProvider PublishedUrlProvider
-
-@{
-    var site = Model.Root();
-    var selection = Model.Root().Children.Where(c => c.IsVisible(PublishedValueFallback)).ToArray();
-}
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
 <header>
 
@@ -19,7 +7,7 @@
         <nav class="d-flex">
 
             <div class="col-2 d-flex">
-                <img class="logo my-auto" src="/image/website/logotype.svg">
+                <img class="logo my-auto" src="image/website/logotype.svg">
             </div>
 
             <div class="col">
@@ -49,15 +37,10 @@
                     <div class="row flex-row mt-2">
 
                         <div class="col flex-rows mt-4 mb-3">
-
-                            <a class="me-3 @(Model.Id == site.Id ? "current" : null)" href="@site.Url()">@site.Name</a>
-
-                            @if (selection?.Length > 0)
-                                @foreach (var item in selection)
-                                {
-                                    <a class="me-3 @(item.IsAncestorOrSelf(Model) ? "current" : null)" href="@item.Url()">@item.Name</a>
-                                }
-
+                            <a class="me-3 active" href="/">Home</a>
+                            <a class="mx-3" href="/services">Services</a>
+                            <a class="mx-3" href="/news">News</a>
+                            <a class="mx-3" href="/contact">Contact</a>
                         </div>
 
                         <div class="col d-flex my-auto p-0">

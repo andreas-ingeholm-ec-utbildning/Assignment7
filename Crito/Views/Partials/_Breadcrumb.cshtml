@@ -1,17 +1,31 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
 
-<section class="breadcrumb d-flex flex-column py-5">
+@inject IPublishedUrlProvider PublishedUrlProvider
 
-    <div class="my-5 d-flex flex-column">
+@{
+    var selection = Model.Ancestors().ToArray();
+}
 
-        <div class="background-effect mt-5"></div>
-        <div class="d-flex flex-row mx-auto">
-            <a href="/" class="me-3 text-decoration-none text-reset">Home</a>
-            <a href="@Context.Request.Path" class="text-capitalize text-decoration-none text-reset">@Context.Request.Path.ToString().TrimStart('/')</a>
+@if (selection?.Length > 0)
+{
+    <section class="breadcrumb d-flex flex-column py-5">
+
+        <div class="my-5 d-flex flex-column">
+
+            <div class="background-effect mt-5"></div>
+            <div class="d-flex flex-row mx-auto">
+                @foreach (var item in selection.OrderBy(x => x.Level))
+                {
+                    <a class="text-capitalize text-decoration-none text-reset me-3" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                }
+                <span class="fw-bold">@Model.Name</span>
+            </div>
+
+            <h1 class="mx-auto my-2 fw-bold">@Model.Value("PageTitle")</h1>
+
         </div>
 
-        <h1 class="mx-auto my-2">@Model.Value("PageTitle")</h1>
-
-    </div>
-
-</section>
+    </section>
+}

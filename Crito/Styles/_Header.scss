@@ -15,10 +15,19 @@ header {
         color: black;
         text-decoration: none;
         white-space: nowrap;
+
+        &.current {
+            text-decoration: underline black 1px;
+        }
+
+        &:hover {
+            text-decoration: underline gray 1px;
+        }
+
     }
 
     .line {
-        background: rgba(25,25,25,0.1 );
+        background: rgba(25, 25, 25, 0.1);
 
         &.vertical {
             height: 22px;
