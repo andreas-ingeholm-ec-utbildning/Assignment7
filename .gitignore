@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Crito/umbraco/Data/Umbraco.sqlite.db-wal
+Crito/umbraco/Data/Umbraco.sqlite.db-shm
