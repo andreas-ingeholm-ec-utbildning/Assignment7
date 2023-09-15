@@ -1,5 +1,22 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@{
+
+    var description = Model.Value<string>("footerDescription");
+
+    var linkSections =
+    (Model.Value<IEnumerable<BlockListItem>>("footerLinks") ?? Enumerable.Empty<BlockListItem>()).
+    Select(item =>
+    (
+    header: item.Content.Value<string>("header"),
+    links: item.Content.Value<IEnumerable<Link>>("links") ?? Enumerable.Empty<Link>()
+    ));
+
+}
 
 <footer>
 
@@ -10,41 +27,20 @@
                 <img src="~/image/website/logotype-white.svg" alt="" />
             </div>
             <div class="row mt-4">
-                <p class="logo-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas voluptates! Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
+                <p class="logo-text">@description</p>
             </div>
         </div>
 
-        <div class="col d-flex flex-column">
-            <h4 class="mb-4">Company</h4>
-            <a class="my-2" href="/about">About</a>
-            <a class="my-2" href="/features">Features</a>
-            <a class="my-2" href="/works">Works</a>
-            <a class="my-2" href="/career">Career</a>
-        </div>
-
-        <div class="col d-flex flex-column">
-            <h4 class="mb-4">Help</h4>
-            <a class="my-2" href="/support">Customer Support</a>
-            <a class="my-2" href="/delivery-details">Delivery Details</a>
-            <a class="my-2" href="/agreements/terms">Terms & Conditions</a>
-            <a class="my-2" href="/agreements/privacy">Privacy Policy</a>
-        </div>
-
-        <div class="col d-flex flex-column">
-            <h4 class="mb-4">Resources</h4>
-            <a class="my-2" href="/free/ebook" target="_blank">Free eBooks</a>
-            <a class="my-2" href="/tutorials/development" target="_blank">Development Tutorial</a>
-            <a class="my-2" href="/guides/how-to-blog" target="_blank">How to - Blog</a>
-            <a class="my-2" href="https://youtube.com" target="_blank">Youtube Playlist</a>
-        </div>
-
-        <div class="col d-flex flex-column">
-            <h4 class="mb-4">Link</h4>
-            <a class="my-2" href="/free/ebook" target="_blank">Free eBooks</a>
-            <a class="my-2" href="/tutorials/development" target="_blank">Development Tutorial</a>
-            <a class="my-2" href="/guides/how-to-blog" target="_blank">How to - Blog</a>
-            <a class="my-2" href="https://youtube.com" target="_blank">Youtube Playlist</a>
-        </div>
+        @foreach (var linkSection in linkSections)
+        {
+            <div class="col d-flex flex-column">
+                <h4 class="mb-4">@linkSection.header</h4>
+                @foreach (var link in linkSection.links)
+                {
+                    <a class="my-2" href="@link.Url">@link.Name</a>
+                }
+            </div>
+        }
 
     </section>
 
@@ -59,12 +55,7 @@
             <div class="col m-0 p-0"> © @DateTime.Now.Year Crito - Consulting Company Inc. All Rights Reserved.</div>
 
             <div class="col-auto">
-                <div class="row flex-rows">
-                    <a href="https://facebook.com" target="_blank" class="w-auto"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="w-auto"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="w-auto"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="w-auto"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
+                @await Html.PartialAsync("_Socials")
             </div>
 
         </div>

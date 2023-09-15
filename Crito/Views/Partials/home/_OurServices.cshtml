@@ -8,14 +8,14 @@
     var buttonLink = Model.Value<Link>("ourServicesMoreButton");
 
     var cards =
-    (Model.Value<IEnumerable<BlockListItem>>("featureCards") ?? Enumerable.Empty<BlockListItem>()).
+    (Model.Value<IEnumerable<BlockListItem>>("ourServicesCards") ?? Enumerable.Empty<BlockListItem>()).
     Select(item =>
     (
     model: item.Content,
     header: item.Content.Value<string>("header"),
     description: item.Content.Value<string>("description"),
     buttonLink: item.Content.Value<Link>("buttonLink"),
-    isHighlight: item.Content.Value<bool>("highlight")
+    isHighlight: item.Content.Value<bool>("isHighlight")
     ));
 
 }
@@ -32,10 +32,6 @@
 
             @foreach (var card in cards)
             {
-
-                <script>
-                    console.log("@card.model.HasValue("highlight1")");
-                </script>
 
                 var highlight = card.isHighlight ? "highlight" : "";
                 <div class="col card py-5 px-3 me-5 @highlight">

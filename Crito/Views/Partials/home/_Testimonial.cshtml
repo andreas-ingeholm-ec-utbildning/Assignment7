@@ -1,4 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@{
+    var header = Model.Value<string>("testimonialsHeader");
+    var buttonLink = Model.Value<Link>("testimonialsMoreButton");
+}
 
 <section class="testimonial pt-5">
 
@@ -7,7 +15,7 @@
 
             <div class="row d-flex flex-column text-center mt-5 pt-5">
                 <h5 class="text-danger">Testimonial</h5>
-                <h1 class="fw-bold">What Our Client Says</h1>
+                <h1 class="fw-bold">@header</h1>
             </div>
 
             <div class="row mb-5">
@@ -66,7 +74,7 @@
             </div>
 
             <div class="row d-flex mb-5 pb-4">
-                <a href="#" class="button-theme black mx-auto w-auto">All Reviews <i class="fa-solid fa-arrow-up-right"></i></a>
+                <a href="@buttonLink?.Url" class="button-theme black mx-auto w-auto">@buttonLink?.Name <i class="fa-solid fa-arrow-up-right"></i></a>
             </div>
 
         </div>

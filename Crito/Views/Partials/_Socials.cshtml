@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+
+@{
+    var facebook = Model.Value<string>("facebook");
+    var twitter = Model.Value<string>("twitter");
+    var instagram = Model.Value<string>("instagram");
+    var linkedIn = Model.Value<string>("linkedIn");
+}
+
+<a href="@facebook" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-facebook"></i></a>
+<a href="@twitter" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-twitter"></i></a>
+<a href="@instagram" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-instagram"></i></a>
+<a href="@linkedIn" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-linkedin"></i></a>

@@ -8,8 +8,14 @@
 @inject IPublishedUrlProvider PublishedUrlProvider
 
 @{
+
     var site = Model.Root();
-    var selection = Model.Root().Children.Where(c => c.IsVisible(PublishedValueFallback)).ToArray();
+    var links = Model.Root().Children.Where(c => c.IsVisible(PublishedValueFallback)).ToArray();
+
+    var phoneNumber = Model.Value<string>("phoneNumber");
+    var email = Model.Value<string>("email");
+    var address = Model.Value<string>("address");
+
 }
 
 <header>
@@ -28,18 +34,14 @@
                     <div class="row px-0 mt-2 mb-2">
 
                         <div class="col d-flex flex-row">
-                            <a href=""><i class="fa-sharp fa-regular fa-phone"></i> +46 (8) 121 470 50</a>
+                            <a href="tel:@phoneNumber" target="_blank"><i class="fa-sharp fa-regular fa-phone"></i> @phoneNumber</a>
                             <div class="line vertical mx-3"></div>
-                            <a href=""><i class="fa-regular fa-envelope"></i> info@crito.com</a>
+                            <a href="mailto:@email" target="_blank"><i class="fa-regular fa-envelope"></i> @email</a>
                             <div class="line vertical ms-5 me-3"></div>
-                            <a href=""><i class="fa-sharp fa-regular fa-location-dot"></i> Sveavägen 31, 111 34 STOCKHOLM</a>
+                            <a href="https://www.google.com/maps/search/@address" target="_blank"><i class="fa-sharp fa-regular fa-location-dot"></i> @address</a>
                         </div>
-
                         <div class="col flex-rows text-end">
-                            <a href="https://facebook.com" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://twitter.com" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="https://instagram.com" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://linkedin.com" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-linkedin"></i></a>
+                            @await Html.PartialAsync("_Socials")
                         </div>
 
                     </div>
@@ -52,11 +54,10 @@
 
                             <a class="me-3 @(Model.Id == site.Id ? "current" : null)" href="@site.Url()">@site.Name</a>
 
-                            @if (selection?.Length > 0)
-                                @foreach (var item in selection)
-                                {
-                                    <a class="me-3 @(item.IsAncestorOrSelf(Model) ? "current" : null)" href="@item.Url()">@item.Name</a>
-                                }
+                            @foreach (var item in links)
+                            {
+                                <a class="me-3 @(item.IsAncestorOrSelf(Model) ? "current" : null)" href="@item.Url()">@item.Name</a>
+                            }
 
                         </div>
 

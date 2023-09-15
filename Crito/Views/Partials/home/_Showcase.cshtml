@@ -4,9 +4,7 @@
 
 @{
     
-    var showcase = Model.Value<IPublishedContent>("showcaseImage");
-    var imageUrl = showcase?.MediaUrl();
-
+    var imageUrl = Model.Value<IPublishedContent>("showcaseImage")?.MediaUrl();
     var buttons = Model.Value<IEnumerable<Link>>("showcaseButtons") ?? Enumerable.Empty<Link>();
 
 }

@@ -1,10 +1,20 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@{
+
+    var header = Model.Value<string>("projectAndCaseStudiesHeader");
+    var buttonLink = Model.Value<Link>("projectAndCaseStudiesMoreButton");
+
+}
 
 <section class="container mt-5 pt-5 project-and-case-studies">
 
     <div class="d-flex flex-column text-center mt-5 pt-5">
         <h5 class="text-danger">Projects & Case Studies</h5>
-        <h1 class="fw-bold">Lets Look At Our Global Projects</h1>
+        <h1 class="fw-bold">@header</h1>
     </div>
 
     <div class="row">
@@ -39,7 +49,7 @@
     </div>
 
     <div class="my-5 py-5 d-flex">
-        <a href="#" class="button-theme black mx-auto">All Recent Projects <i class="fa-solid fa-arrow-up-right"></i></a>
+        <a href="@buttonLink?.Url" class="button-theme black mx-auto">@buttonLink?.Name <i class="fa-solid fa-arrow-up-right"></i></a>
     </div>
 
 </section>

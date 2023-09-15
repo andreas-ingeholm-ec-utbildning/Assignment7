@@ -1,4 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@{
+    var header = Model.Value<string>("meetOurTeamHeader");
+    var buttonLink = Model.Value<Link>("meetOurTeamMoreButton");
+}
 
 <!--TODO: Implement corousel-->
 <section class="mt-5 pt-5 meet-our-team">
@@ -8,10 +16,10 @@
         <div class="row d-flex flex-row mt-5 pt-5">
             <div class="col">
                 <h5 class="text-danger">Meet Our Team</h5>
-                <h1 class="fw-bold">Experience Team Members</h1>
+                <h1 class="fw-bold">@header</h1>
             </div>
             <div class="col d-flex">
-                <a href="#" class="button-theme secondary ms-auto my-auto">Browse Team <i class="fa-solid fa-arrow-up-right"></i></a>
+                <a href="@buttonLink?.Url" class="button-theme secondary ms-auto my-auto">@buttonLink?.Name <i class="fa-solid fa-arrow-up-right"></i></a>
             </div>
         </div>
 
