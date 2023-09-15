@@ -421,7 +421,6 @@ footer .wavy-lines {
   margin-top: 28%;
 }
 .why-choose-us .image-container .image {
-  background: url(/image/stock/amy-hirschi-K0c8ko3e6AA-unsplash.jpg);
   width: 645px;
   height: 505px;
   position: relative;
@@ -467,18 +466,6 @@ footer .wavy-lines {
   background-position: center;
   height: 420px;
 }
-.meet-our-team .image.one {
-  background-image: url(/image/stock/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg);
-}
-.meet-our-team .image.two {
-  background-image: url(/image/stock/itay-verchik-6ZKGBzrDd3I-unsplash.jpg);
-}
-.meet-our-team .image.three {
-  background-image: url(/image/stock/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg);
-}
-.meet-our-team .image.four {
-  background-image: url(/image/stock/the-connected-narrative-N8lRH2uxih4-unsplash.jpg);
-}
 
 .testimonial {
   background: rgba(240, 208, 130, 0.93);
@@ -491,6 +478,9 @@ footer .wavy-lines {
 .testimonial p {
   margin: 0;
   font-family: "DM Sans";
+}
+.testimonial .height-120px {
+  height: 120px;
 }
 .testimonial .text-danger {
   color: #f94d1c;
@@ -514,15 +504,6 @@ footer .wavy-lines {
   right: -4px;
   border: 1px solid rgba(0, 0, 0, 0.1254901961);
   border-radius: 100%;
-}
-.testimonial .image.one {
-  background-image: url(/image/stock/vince-veras-AJIqZDAUD7A-unsplash.jpg);
-}
-.testimonial .image.two {
-  background-image: url(/image/stock/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg);
-}
-.testimonial .image.three {
-  background-image: url(/image/stock/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg);
 }
 
 .contact-info h4 {

@@ -4,11 +4,20 @@
 @using Umbraco.Cms.Core.Models.PublishedContent
 
 @{
+
     var header = Model.Value<string>("meetOurTeamHeader");
     var buttonLink = Model.Value<Link>("meetOurTeamMoreButton");
+
+    var teamMembers = (Model.Value<IEnumerable<BlockListItem>>("teamMembers") ?? Enumerable.Empty<BlockListItem>()).Select((item, i) =>
+    (
+    isFirst: i == 0,
+    name: item.Content.Value<string>("memberName"),
+    image: item.Content.Value<IPublishedContent>("image")?.MediaUrl(),
+    jobTitle: item.Content.Value<string>("jobTitle")
+    ));
+
 }
 
-<!--TODO: Implement corousel-->
 <section class="mt-5 pt-5 meet-our-team">
 
     <div class="container px-5">
@@ -25,29 +34,14 @@
 
         <div class="row mt-5 pt-5">
 
-            <div class="col">
-                <div class="image one"></div>
-                <h3 class="fw-bold mt-4">Kristine Palmer</h3>
-                <h5>Chief Operation Officer</h5>
-            </div>
-
-            <div class="col">
-                <div class="image two"></div>
-                <h3 class="fw-bold mt-4">Mark Aubri</h3>
-                <h5>Senior Consultant</h5>
-            </div>
-
-            <div class="col">
-                <div class="image three"></div>
-                <h3 class="fw-bold mt-4">Kimberly Hansen</h3>
-                <h5>Senior Consultant</h5>
-            </div>
-
-            <div class="col">
-                <div class="image four"></div>
-                <h3 class="fw-bold mt-4">Justin Willoman</h3>
-                <h5>Senior Tech Consultant</h5>
-            </div>
+            @foreach (var member in teamMembers)
+            {
+                <div class="col">
+                    <div class="image" style="background-image: url(@member.image)"></div>
+                    <h3 class="fw-bold mt-4">@member.name</h3>
+                    <h5>@member.jobTitle</h5>
+                </div>
+            }
 
         </div>
 

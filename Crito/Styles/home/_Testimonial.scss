@@ -1,5 +1,5 @@
 .testimonial {
-    background: rgba(240,208,130,0.93);
+    background: rgba(240, 208, 130, 0.93);
 
     .container {
         background: white;
@@ -10,6 +10,10 @@
     p {
         margin: 0;
         font-family: 'DM Sans';
+    }
+
+    .height-120px {
+        height: 120px;
     }
 
     .text-danger {
@@ -37,16 +41,5 @@
             border-radius: 100%;
         }
 
-        &.one {
-            background-image: url(/image/stock/vince-veras-AJIqZDAUD7A-unsplash.jpg);
-        }
-
-        &.two {
-            background-image: url(/image/stock/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg);
-        }
-
-        &.three {
-            background-image: url(/image/stock/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg);
-        }
     }
 }

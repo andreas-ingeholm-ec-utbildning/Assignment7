@@ -1,5 +1,5 @@
 .meet-our-team {
-    background: rgba(240,208,130,0.93);
+    background: rgba(240, 208, 130, 0.93);
 
     .col {
         width: 307px;
@@ -10,21 +10,5 @@
         background-repeat: no-repeat;
         background-position: center;
         height: 420px;
-
-        &.one {
-            background-image: url(/image/stock/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg);
-        }
-
-        &.two {
-            background-image: url(/image/stock/itay-verchik-6ZKGBzrDd3I-unsplash.jpg);
-        }
-
-        &.three {
-            background-image: url(/image/stock/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg);
-        }
-
-        &.four {
-            background-image: url(/image/stock/the-connected-narrative-N8lRH2uxih4-unsplash.jpg);
-        }
     }
 }

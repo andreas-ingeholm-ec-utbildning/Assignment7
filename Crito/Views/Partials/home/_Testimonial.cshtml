@@ -4,8 +4,23 @@
 @using Umbraco.Cms.Core.Models.PublishedContent
 
 @{
+
     var header = Model.Value<string>("testimonialsHeader");
     var buttonLink = Model.Value<Link>("testimonialsMoreButton");
+
+    var reviews = (Model.Value<IEnumerable<BlockListItem>>("testimonialsReviews") ?? Enumerable.Empty<BlockListItem>()).Select(item =>
+    {
+        var author = item.Content.Value<IEnumerable<BlockListItem>>("author")?.FirstOrDefault()?.Content;
+        return (
+    model: item.Content,
+    rating: item.Content.Value<int>("rating"),
+    content: item.Content.Value<string>("reviewContent"),
+    name: author?.Value<string>("memberName"),
+    image: author?.Value<IPublishedContent>("image")?.MediaUrl(),
+    jobTitle: author?.Value<string>("jobTitle")
+    );
+    });
+
 }
 
 <section class="testimonial pt-5">
@@ -20,56 +35,25 @@
 
             <div class="row mb-5">
 
-                <div class="col m-5">
+                @foreach (var review in reviews)
+                {
+                    <div class="col m-5">
 
-                    <stars c=5></stars>
-                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate"</p>
+                        <stars c=@review.rating></stars>
+                        <p class="height-120px">"@review.content"</p>
 
-                    <div class="row mt-4">
-                        <div class="col-auto">
-                            <div class="image one m-2"></div>
+                        <div class="row mt-4">
+                            <div class="col-auto">
+                                <div class="image m-2" style="background-image: url(@review.image)"></div>
+                            </div>
+                            <div class="col my-auto">
+                                <p class="fw-bold">@review.name</p>
+                                <p class="text-danger">@review.jobTitle</p>
+                            </div>
                         </div>
-                        <div class="col my-auto">
-                            <p class="fw-bold">Cassandra Warren</p>
-                            <p class="text-danger">Business Manager, Dorfus</p>
-                        </div>
+
                     </div>
-
-                </div>
-
-                <div class="col m-5">
-
-                    <stars c=5></stars>
-                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate"</p>
-
-                    <div class="row mt-4">
-                        <div class="col-auto">
-                            <div class="image two m-2"></div>
-                        </div>
-                        <div class="col my-auto">
-                            <p class="fw-bold">Amanda Tulling</p>
-                            <p class="text-danger">Senior Developer, Square</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col m-5">
-
-                    <stars c=5></stars>
-                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate"</p>
-
-                    <div class="row mt-4">
-                        <div class="col-auto">
-                            <div class="image three m-2"></div>
-                        </div>
-                        <div class="col my-auto">
-                            <p class="fw-bold">Jack McDogglas</p>
-                            <p class="text-danger">Key Account Manager, Gobona</p>
-                        </div>
-                    </div>
-
-                </div>
+                }
 
             </div>
 
