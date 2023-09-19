@@ -15,6 +15,7 @@ header {
         color: black;
         text-decoration: none;
         white-space: nowrap;
+        text-underline-offset: 4px;
 
         &.current {
             text-decoration: underline black 1px;

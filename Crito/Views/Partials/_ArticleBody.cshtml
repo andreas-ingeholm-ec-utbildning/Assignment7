@@ -1,20 +1,31 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Services
+@inject IUserService UserService
 
 @{
-    var tags = new[] { "Digilization", "School", "IT", "Design", "Work", "Tech" };
+
+    var title = Model.Name;
+    var content = Model.Value("newsContent");
+    var imageUrl = Model.Value<IPublishedContent>("newsImage")?.MediaUrl();
+    var date = Model.CreateDate;
+    var name = Model.CreatorName(UserService);
+    var category = Model.Value<string>("newsCategory");
+    var tags = Model.Value<IEnumerable<string>>("newsTags") ?? Enumerable.Empty<string>();
+
 }
 
-<div class="article container my-5 py-5">
+<div class="article container my-5">
 
     <div class="row mb-5">
 
-        <h1>How to use digilization in the classroom</h1>
+        <h1>@title</h1>
         <div class="d-flex flex-row">
-            <p>Mar 25, 2023</p>
+            <p>@date.ToString("MMM dd, yyyy")</p>
             <p class="text-warning mx-4">•</p>
-            <p>Business</p>
+            <p>@category</p>
             <p class="text-warning mx-4">•</p>
-            <p>Kimberly Hansen</p>
+            <p>@name</p>
         </div>
 
     </div>
@@ -23,20 +34,14 @@
 
         <div class="col me-5">
 
-            <div class="image mb-4" style="background-image: url(/image/stock/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg)"></div>
+            <div class="image mb-4" style="background-image: url(@imageUrl)"></div>
 
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</p>
-            <p class="text-muted">Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. uspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.</p>
-            <p class="mb-4 text-muted">Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
-            <q>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</q>
-
-            <p class="mt-4 text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+            @content
 
             <div class="row w-auto mt-5 pt-3">
                 @foreach (var tag in tags)
                 {
-                    <div class="col">
+                    <div class="col mb-5">
                         <a href="#" class="button-theme gray">@tag</a>
                     </div>
                 }

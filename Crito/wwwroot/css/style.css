@@ -125,6 +125,7 @@ header a {
   color: black;
   text-decoration: none;
   white-space: nowrap;
+  text-underline-offset: 4px;
 }
 header a.current {
   -webkit-text-decoration: underline black 1px;
@@ -262,6 +263,40 @@ footer .wavy-lines {
   height: 500px;
   background-position: center;
   background-size: cover;
+}
+
+.articles-and-news .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.item-pagination .item-link {
+  color: black;
+  display: flex;
+  background-color: transparent;
+  border-radius: 3px;
+  border-color: gray;
+  border-width: 1px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  text-decoration: none;
+}
+.item-pagination .item-link > * {
+  margin: auto;
+}
+.item-pagination .item-link:hover {
+  background-color: black;
+  color: white;
+}
+.item-pagination .item-link.active {
+  background-color: black;
+  color: white;
+}
+.item-pagination .item-link.active:hover {
+  background-color: white;
+  color: black;
 }
 
 .showcase {

@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsItemPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout.cshtml";
+	ViewData["PageTitle"] = "News & Articles";
+}
+
+@await Html.PartialAsync("_Breadcrumb");
+@await Html.PartialAsync("_ArticleBody");
+
+<div class="bg-gray">
+	@await Html.PartialAsync("home/_ArticlesAndNews");
+</div>

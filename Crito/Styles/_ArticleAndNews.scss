@@ -1,0 +1,48 @@
+.articles-and-news {
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+}
+
+.item-pagination {
+
+    .item-link {
+
+        color: black;
+        display: flex;
+        background-color: transparent;
+        border-radius: 3px;
+        border-color: gray;
+        border-width: 1px;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        text-decoration: none;
+
+        >* {
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+
+        &.active {
+            background-color: black;
+            color: white;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+
+        }
+
+    }
+
+}

@@ -12,9 +12,9 @@
     var site = Model.Root();
     var links = Model.Root().Children.Where(c => c.IsVisible(PublishedValueFallback)).ToArray();
 
-    var phoneNumber = Model.Value<string>("phoneNumber");
-    var email = Model.Value<string>("email");
-    var address = Model.Value<string>("address");
+    var phoneNumber = "+46 (8) 121 470 50";
+    var email = "info@crito.com";
+    var address = "Sveavägen 31, 111 34 Stockholm";
 
 }
 
@@ -22,7 +22,7 @@
 
     <div class="container d-flex flex-row">
 
-        <nav class="d-flex">
+        <nav class="d-flex w-100">
 
             <div class="col-2 d-flex">
                 <img class="logo my-auto" src="/image/website/logotype.svg">
