@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="12.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11" />
   </ItemGroup>
 
   <ItemGroup>

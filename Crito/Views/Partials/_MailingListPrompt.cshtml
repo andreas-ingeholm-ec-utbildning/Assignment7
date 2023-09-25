@@ -1,20 +1,27 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@using Crito.Controllers;
+@using Crito.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
 @{
+
     var header = Model.Value<string>("mailingListPromptHeader");
+
+    var form = new EmailListForm();
+
 }
 
-<section class="mailing-list-prompt mt-5 py-5">
+<section id="mailing-list" class="mailing-list-prompt mt-5 py-5">
 
     <div class="container row my-5 mx-auto">
         <div class="col">
             <h1>@header</h1>
         </div>
         <div class="col d-flex flex-row">
-            <form>
-                <input type="text" placeholder="username@domain.com" />
-                <button action="post" class="ms-3 button-theme">Subscribe <i class="fa-solid fa-arrow-up-right"></i></button>
-            </form>
+            @using (Html.BeginUmbracoForm("RegisterEmail", "Contact", FormMethod.Post))
+            {
+                <input asp-for="@form.Email" type="text" placeholder="username@domain.com" />
+                <button type="submit" class="ms-3 button-theme">Subscribe <i class="fa-solid fa-arrow-up-right"></i></button>
+            }
         </div>
     </div>
 

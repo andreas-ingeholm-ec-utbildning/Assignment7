@@ -123,3 +123,18 @@ input[type=text] {
 .bg-gray {
     background: #f0efe9;
 }
+
+.form-fail {
+    background-color: red;
+    padding: 12px;
+
+    ul {
+        margin: 0;
+    }
+
+}
+
+.form-success {
+    background-color: deepskyblue;
+    padding: 12px;
+}

@@ -1,3 +1,5 @@
+using Crito.Contexts;
+
 namespace Crito
 {
     public class Startup
@@ -29,12 +31,16 @@ namespace Crito
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
                 .AddDeliveryApi()
                 .AddComposers()
                 .Build();
+
+            services.AddUmbracoEFCoreContext<ContactContext>(_config.GetConnectionString("umbracoDbDSN")!, _config.GetConnectionStringProviderName("umbracoDbDSN")!);
+
         }
 
         /// <summary>

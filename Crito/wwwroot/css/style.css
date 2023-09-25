@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 html,
 body {
   font-family: "Inter";
@@ -110,6 +110,19 @@ input[type=text].gray {
   background: #f0efe9;
 }
 
+.form-fail {
+  background-color: red;
+  padding: 12px;
+}
+.form-fail ul {
+  margin: 0;
+}
+
+.form-success {
+  background-color: deepskyblue;
+  padding: 12px;
+}
+
 header {
   background: #f0efe9;
   color: black;
@@ -128,12 +141,10 @@ header a {
   text-underline-offset: 4px;
 }
 header a.current {
-  -webkit-text-decoration: underline black 1px;
-          text-decoration: underline black 1px;
+  text-decoration: underline black 1px;
 }
 header a:hover {
-  -webkit-text-decoration: underline gray 1px;
-          text-decoration: underline gray 1px;
+  text-decoration: underline gray 1px;
 }
 header .line {
   background: rgba(25, 25, 25, 0.1);
@@ -573,4 +584,4 @@ footer .wavy-lines {
 .map {
   height: 620px;
   margin-bottom: -8px;
-}/*# sourceMappingURL=style.css.map */
+}
