@@ -2,13 +2,28 @@
 @using Umbraco.Cms.Core.Models
 
 @{
-    var facebook = "https://facebook.com";
-    var twitter = "https://twitter.com";
-    var instagram = "https://instagram.com";
-    var linkedIn = "https://linkedIn.com";
+    var facebook = Model.Root().Value<string>("contactFacebook");
+    var twitter = Model.Root().Value<string>("contactTwitter");
+    var instagram = Model.Root().Value<string>("contactInstagram");
+    var linkedIn = Model.Root().Value<string>("contactLinkedIn");
 }
 
-<a href="@facebook" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-facebook"></i></a>
-<a href="@twitter" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-twitter"></i></a>
-<a href="@instagram" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-instagram"></i></a>
-<a href="@linkedIn" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-linkedin"></i></a>
+@if (!string.IsNullOrWhiteSpace(facebook))
+{
+    <a href="@facebook" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-facebook"></i></a>
+}
+
+@if (!string.IsNullOrWhiteSpace(twitter))
+{
+    <a href="@twitter" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-twitter"></i></a>
+}
+
+@if (!string.IsNullOrWhiteSpace(instagram))
+{
+    <a href="@instagram" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-instagram"></i></a>
+}
+
+@if (!string.IsNullOrWhiteSpace(linkedIn))
+{
+    <a href="@linkedIn" target="_blank" class="w-auto mx-1"><i class="fa-brands fa-linkedin"></i></a>
+}
