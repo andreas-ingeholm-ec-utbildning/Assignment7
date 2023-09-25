@@ -12,9 +12,13 @@
     var site = Model.Root();
     var links = Model.Root().Children.Where(c => c.IsVisible(PublishedValueFallback)).ToArray();
 
-    var phoneNumber = "+46 (8) 121 470 50";
-    var email = "info@crito.com";
-    var address = "Sveavägen 31, 111 34 Stockholm";
+    var streetName = Model.Root().Value<string>("contactStreetName");
+    var postalCode = Model.Root().Value<string>("contactPostalCode");
+    var city = Model.Root().Value<string>("contactCity")?.ToUpper();
+
+    var address = $"{streetName}, {postalCode} {city}";
+    var phoneNumber = Model.Root().Value<string>("contactPhoneNumber1");
+    var email = Model.Root().Value<string>("contactEmail1");
 
 }
 

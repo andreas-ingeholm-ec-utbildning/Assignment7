@@ -6,10 +6,10 @@
 
 @{
 
-    var description = Model.Value<string>("footerDescription");
+    var description = Model.Root().Value<string>("footerDescription");
 
     var linkSections =
-    (Model.Value<IEnumerable<BlockListItem>>("footerLinks") ?? Enumerable.Empty<BlockListItem>()).
+    (Model.Root().Value<IEnumerable<BlockListItem>>("footerLinks") ?? Enumerable.Empty<BlockListItem>()).
     Select(item =>
     (
     header: item.Content.Value<string>("header"),

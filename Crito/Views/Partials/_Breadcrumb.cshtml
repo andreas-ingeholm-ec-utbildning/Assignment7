@@ -6,6 +6,7 @@
 
 @{
     var selection = Model.Ancestors().ToArray();
+    var title = ViewData["pageTitle"] ?? Model.Value("pageTitle");
 }
 
 @if (selection?.Length > 0)
@@ -20,10 +21,9 @@
                 {
                     <a class="text-capitalize text-decoration-none text-reset me-3" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
                 }
-                <span class="fw-bold">@Model.Name</span>
             </div>
 
-            <h1 class="mx-auto my-2 fw-bold">@ViewData["PageTitle"]</h1>
+            <h1 class="mx-auto my-2 fw-bold">@title</h1>
 
         </div>
 

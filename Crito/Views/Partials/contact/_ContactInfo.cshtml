@@ -1,50 +1,62 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
+@{
+
+    var streetName = Model.Root().Value<string>("contactStreetName");
+    var postalCode = Model.Root().Value<string>("contactPostalCode");
+    var city = Model.Root().Value<string>("contactCity")?.ToUpper();
+    var phoneNumber1 = Model.Root().Value<string>("contactPhoneNumber1");
+    var phoneNumber2 = Model.Root().Value<string>("contactPhoneNumber2");
+    var email1 = Model.Root().Value<string>("contactEmail1");
+    var email2 = Model.Root().Value<string>("contactEmail2");
+
+}
+
 <section class="contact-info container my-5 py-5">
 
     <div class="row">
 
-        <div class="col card p-5 me-4">
+        <div class="col-md card p-5 me-4 mb-4">
             <div class="row">
-                <div class="col-3 d-flex">
-                    <div class="icon">
+                <div class="col-md d-flex p-0">
+                    <div class="icon mb-4">
                         <i class="fa-sharp fa-solid fa-location-dot"></i>
                     </div>
                 </div>
                 <div class="col">
                     <h4>Visit us</h4>
-                    <p class="text-muted m-0">Sveavägen 31</p>
-                    <p class="text-muted m-0">11 34 STOCKHOLM</p>
+                    <p class="text-muted text-nowrap m-0">@streetName</p>
+                    <p class="text-muted text-nowrap m-0">@postalCode @city</p>
                 </div>
             </div>
         </div>
 
-        <div class="col card p-5 me-4">
+        <div class="col-md card p-5 me-4 mb-4">
             <div class="row">
-                <div class="col-3 d-flex">
-                    <div class="icon">
+                <div class="col-md d-flex">
+                    <div class="icon mb-4">
                         <i class="fa-sharp fa-solid fa-location-dot"></i>
                     </div>
                 </div>
                 <div class="col">
                     <h4>Call us</h4>
-                    <p class="text-muted m-0">+46 (8) 121 470 50</p>
-                    <p class="text-muted m-0">+46 (8) 121 470 51</p>
+                    <p class="text-muted text-nowrap m-0">@phoneNumber1</p>
+                    <p class="text-muted text-nowrap m-0">@phoneNumber2</p>
                 </div>
             </div>
         </div>
 
-        <div class="col card p-5">
+        <div class="col-md card p-5 me-4 mb-4">
             <div class="row">
-                <div class="col-3 d-flex">
-                    <div class="icon">
+                <div class="col-md d-flex">
+                    <div class="icon mb-4">
                         <i class="fa-sharp fa-solid fa-location-dot"></i>
                     </div>
                 </div>
                 <div class="col">
                     <h4>Email us</h4>
-                    <p class="text-muted m-0">info@crito.com</p>
-                    <p class="text-muted m-0">support@crito.com</p>
+                    <p class="text-muted text-nowrap m-0">@email1</p>
+                    <p class="text-muted text-nowrap m-0">@email2</p>
                 </div>
             </div>
         </div>
