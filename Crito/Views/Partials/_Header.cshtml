@@ -29,7 +29,7 @@
 
         <nav class="d-flex w-100">
 
-            <div class="col-2 d-flex">
+            <div class="col-2 d-none d-lg-flex">
                 <img class="logo my-auto" src="/image/website/logotype.svg">
             </div>
 
@@ -38,15 +38,15 @@
 
                     <div class="row px-0 mt-2 mb-2">
 
-                        <div class="col d-flex flex-row">
+                        <div class="d-flex flex-row flex-wrap">
                             <a href="tel:@phoneNumber" target="_blank"><i class="fa-sharp fa-regular fa-phone"></i> @phoneNumber</a>
                             <div class="line vertical mx-3"></div>
                             <a href="mailto:@email" target="_blank"><i class="fa-regular fa-envelope"></i> @email</a>
                             <div class="line vertical ms-5 me-3"></div>
                             <a href="https://www.google.com/maps/search/@address" target="_blank"><i class="fa-sharp fa-regular fa-location-dot"></i> @address</a>
-                        </div>
-                        <div class="col flex-rows text-end">
-                            @await Html.PartialAsync("_Socials")
+                            <div class="ms-auto">
+                                @await Html.PartialAsync("_Socials")
+                            </div>
                         </div>
 
                     </div>

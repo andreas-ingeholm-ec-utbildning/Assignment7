@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 html,
 body {
   font-family: "Inter";
@@ -141,10 +141,12 @@ header a {
   text-underline-offset: 4px;
 }
 header a.current {
-  text-decoration: underline black 1px;
+  -webkit-text-decoration: underline black 1px;
+          text-decoration: underline black 1px;
 }
 header a:hover {
-  text-decoration: underline gray 1px;
+  -webkit-text-decoration: underline gray 1px;
+          text-decoration: underline gray 1px;
 }
 header .line {
   background: rgba(25, 25, 25, 0.1);
@@ -324,7 +326,7 @@ footer .wavy-lines {
 }
 .showcase p {
   font-size: 20px;
-  width: 698px;
+  max-width: 698px;
   color: rgba(25, 25, 25, 0.7);
 }
 .showcase .wavy-lines {
@@ -332,6 +334,13 @@ footer .wavy-lines {
   left: 0;
   bottom: 0;
   pointer-events: none;
+}
+.showcase .w-574px {
+  width: 574px;
+  height: 100%;
+}
+.showcase img {
+  width: 574px;
 }
 
 .features {
@@ -370,7 +379,6 @@ footer .wavy-lines {
 .about-company .image {
   width: 533px;
   height: 615px;
-  background: url(/image/stock/daria-pimkina-tYaccl19A3Q-unsplash.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -472,7 +480,7 @@ footer .wavy-lines {
   position: relative;
   margin: 0 auto;
   background-size: contain;
-  background-repeat: round;
+  background-repeat: no-repeat;
 }
 
 .project-and-case-studies h5 {
@@ -525,8 +533,15 @@ footer .wavy-lines {
   margin: 0;
   font-family: "DM Sans";
 }
-.testimonial .height-120px {
-  height: 120px;
+@media only screen and (min-width: 1200px) {
+  .testimonial .review-content {
+    height: 168px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .testimonial .review-content {
+    text-wrap: wrap;
+  }
 }
 .testimonial .text-danger {
   color: #f94d1c;
@@ -584,4 +599,4 @@ footer .wavy-lines {
 .map {
   height: 620px;
   margin-bottom: -8px;
-}
+}/*# sourceMappingURL=style.css.map */

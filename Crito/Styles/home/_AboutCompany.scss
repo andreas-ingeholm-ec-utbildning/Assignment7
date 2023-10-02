@@ -7,13 +7,12 @@
     .image {
         width: 533px;
         height: 615px;
-        background: url(/image/stock/daria-pimkina-tYaccl19A3Q-unsplash.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .image-overlay {
-        filter: drop-shadow(0px 18px 20px rgba(44,44,44,0.15 ));
+        filter: drop-shadow(0px 18px 20px rgba(44, 44, 44, 0.15));
         background: #beebff;
         z-index: 1;
         position: relative;
@@ -23,7 +22,7 @@
     }
 
     p {
-        color: rgba(25,25,25,0.7 );
+        color: rgba(25, 25, 25, 0.7);
     }
 
     h1 {

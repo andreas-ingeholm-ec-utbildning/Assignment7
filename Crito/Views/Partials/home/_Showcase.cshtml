@@ -13,7 +13,7 @@
 <div style="background: url(image/background-effects/background-lines.svg) no-repeat left bottom">
 
     <div class="container">
-        <div class="row flex-nowrap">
+        <div class="row">
             <div class="col py-5 mb-5">
                 <h1 class="h1 mt-5">@Model.Value("ShowcaseTitle")</h1>
                 <p>@Model.Value("ShowcaseDescription")</p>
@@ -35,9 +35,7 @@
 
                 </div>
             </div>
-            <div class="col" style="background: url(@imageUrl) no-repeat right bottom; background-size: cover;">
-
-            </div>
+            <img class="d-none d-xxl-block" src="@imageUrl" alt="showcase-image"/>
         </div>
     </div>
 

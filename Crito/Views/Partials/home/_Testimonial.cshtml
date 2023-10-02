@@ -37,12 +37,12 @@
 
                 @foreach (var review in reviews)
                 {
-                    <div class="col m-5">
+                    <div class="col-xl m-5 flex-shrink-1">
 
                         <stars c=@review.rating></stars>
-                        <p class="height-120px">"@review.content"</p>
+                        <p class="review-content">"@review.content"</p>
 
-                        <div class="row mt-4">
+                        <div class="row">
                             <div class="col-auto">
                                 <div class="image m-2" style="background-image: url(@review.image)"></div>
                             </div>

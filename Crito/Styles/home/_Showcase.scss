@@ -13,7 +13,7 @@
 
     p {
         font-size: 20px;
-        width: 698px;
+        max-width: 698px;
         color: rgba(25, 25, 25, 0.7);
     }
 
@@ -23,4 +23,14 @@
         bottom: 0;
         pointer-events: none;
     }
+
+    .w-574px {
+        width: 574px;
+        height: 100%;
+    }
+
+    img {
+        width: 574px;
+    }
+
 }

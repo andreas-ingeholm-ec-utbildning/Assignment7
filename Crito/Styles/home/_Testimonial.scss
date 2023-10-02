@@ -12,8 +12,16 @@
         font-family: 'DM Sans';
     }
 
-    .height-120px {
-        height: 120px;
+    .review-content {
+
+        @media only screen and (min-width: 1200px) {
+            height: 168px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            text-wrap: wrap;
+        }
+
     }
 
     .text-danger {
