@@ -1,58 +1,100 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-
-@functions {
-
-    public class ArticleItem
-    {
-        public string Image { get; set; } = null!;
-        public string Category { get; set; } = "Business";
-        public string Title { get; set; } = null!;
-        public string Description { get; set; } = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero.";
-        public string Url { get; set; } = null!;
-        public int Day { get; set; }
-        public string? Month { get; set; }
-    }
-
-}
+@using Umbraco.Cms.Core.Models.PublishedContent;
 
 @{
 
-    var list = new ArticleItem[]
-    {
-        new() { Url = "/article", Month = "Mar", Day = 25, Title = "How to use digilization in the classroom",  Image = "linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" },
-        new() { Url = "/article", Month = "Mar", Day = 17, Title = "Hot to implement ChatGPT in your projects", Image = "emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" },
-        new() { Url = "/article", Month = "Mar", Day = 13, Title = "The guide to support modern CSS design",    Image = "kobu-agency-ipARHaxETRk-unsplash.jpg" },
-    };
+    var itemsPerPage = 3;
+    var pageNumber = 1;
+
+    if (!int.TryParse(Context.Request.Query["page"], out pageNumber))
+        pageNumber = 1;
+
+    var items =
+    (Umbraco.Content(Guid.Parse("987d0579-6070-4be0-95e6-2f04d2756c15"))?.
+    ChildrenOfType("newsItemPage")?.Where(x => x.IsVisible())?.
+    OrderByDescending(x => x.CreateDate)?.ToList()) ??
+    Enumerable.Empty<Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>().ToList();
+
+    var totalItems = items.Count;
+    pageNumber = Math.Clamp(pageNumber, 1, (int)Math.Ceiling(totalItems / (double)itemsPerPage));
+
+    var pagedItems = items.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
 
 }
 
-<div class="container articles-and-news py-5">
+<section class="articles-and-news container py-5">
 
     <div class="row mt-5">
-        <h5 class="text-danger">Article & News</h5>
-    </div>
-
-    <div class="row">
 
         <div class="col">
-            <h1 class="fw-bold">Get Every Single Article & News Story</h1>
+
+            <h5 class="text-danger">Article & News</h5>
+
+            <div class="mb-5">
+                <h1 class="fw-bold">Get Every Single Article & News Story</h1>
+            </div>
+
         </div>
 
         <div class="col d-flex">
-            <a href="#" class="button-theme white ms-auto my-auto">Browse Articles <i class="fa-solid fa-arrow-up-right"></i></a>
+            <a href="/news" class="button-theme white ms-auto my-auto">Browse Articles <i class="fa-solid fa-arrow-up-right"></i></a>
         </div>
-
-        <!--TODO: Implement corousel-->
-        <section class="articles-and-news container py-5">
-            <div class="row">
-                @foreach (var article in list)
-                {
-                    @await Html.PartialAsync("_ArticleItem", article)
-                    ;
-                }
-            </div>
-        </section>
 
     </div>
 
-</div>
+
+    <div class="grid">
+
+        @foreach (var item in pagedItems)
+        {
+
+            var url = item.Url();
+            var date = item.CreateDate;
+            var imageUrl = item.Value<IPublishedContent>("newsImage")?.MediaUrl();
+            var category = item.Value<string>("newsCategory");
+            var tags = item.Value<IEnumerable<string>>("newsTags");
+            var ingress = item.Value<string>("newsShortDescription");
+            var content = item.Value<string>("newsContent");
+
+            <div class="article-item col-sm pb-5 flex-grow-0 me-5">
+
+                <a href="@item.Url()" class="text-decoration-none text-black">
+                    <div class="image" style="background-image: url(@imageUrl)">
+                        <div class="image-overlay d-flex">
+                            <div class="m-auto">
+                                <h4 class="fw-bold">@date.ToString("dd")</h4>
+                                <p>@date.ToString("MMM")</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <p class="mt-3 mb-2">@category</p>
+                <a href="@url" class="text-decoration-none text-black">
+                    <h3>@item.Name</h3>
+                </a>
+                <div class="mt-2">@ingress</div>
+
+            </div>
+
+        }
+
+    </div>
+
+    <nav class="item-pagination d-flex flex-row justify-content-center" aria-label="Page navigation">
+
+        @{
+
+            for (int i = 1; i <= Math.Ceiling(totalItems / (double)itemsPerPage); i++)
+            {
+                var active = i == pageNumber ? "active" : null;
+                <a href="./news?page=@i" class="item-link mx-2 @active">
+                    <p>@i</p>
+                </a>
+            }
+
+        }
+
+    </nav>
+
+</section>
